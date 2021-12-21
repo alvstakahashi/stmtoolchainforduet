@@ -79,6 +79,11 @@ RUN git clone -b stable-2.12_toppers https://github.com/toppers/qemu_zynq.git &&
     make && make install && \
     rm -rf /home/qemu
 
+#cfg
+WORKDIR /home/cfg
+RUN git clone https://github.com/alvstakahashi/Toppers_ASP3_Build_STM32_Duet.git && \
+cp Toppers_ASP3_Build_STM32_Duet/cfg .
+
 WORKDIR /home
 
 #Brewの起動設定
