@@ -84,6 +84,18 @@ WORKDIR /home/cfg
 RUN git clone https://github.com/alvstakahashi/Toppers_ASP3_Build_STM32_Duet.git && \
 cp Toppers_ASP3_Build_STM32_Duet/cfg .
 
+
+WORKDIR /home/gdb
+#arm-none-eabi-gdb
+RUN wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/10.3-2021.10/gcc-arm-none-eabi-10.3-2021.10-aarch64-linux.tar.bz2 && \
+sudo tar xjf gcc-arm-none-eabi-10.3-2021.10-aarch64-linux.tar.bz2 && \
+sudo cp gcc-arm-none-eabi-10.3-2021.10/bin/arm-none-eabi-gdb /usr/local/bin/. && \
+rm -rf gcc* && \
+sudo apt install libncurses-dev -y  && \
+sudo ln -s /usr/lib/aarch64-linux-gnu/libncurses.so.6 /usr/lib/aarch64-linux-gnu/libncurses.so.5 && \
+sudo ln -s /usr/lib/aarch64-linux-gnu/libtinfo.so.6 /usr/lib/aarch64-linux-gnu/libtinfo.so.5 
+
+
 WORKDIR /home
 
 #Brewの起動設定
