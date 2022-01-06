@@ -42,4 +42,10 @@ docker run -it -rm alvstakahashi/stmtoolchainforduet:1 <br>
 Intel機で実行するときは、--platform linux/arm64 のオプションをつければ <br>
 警告がでなくなるようです。 <br>
 
+tag説明<br>
+1.0 最初のリリース<br>
+1.1 cfg TOPPERSコンフィグレータを追加しました<br>
+1.2 arm-none-eabi-gdb を追加しました<br>
+
+
 以上 <br>
